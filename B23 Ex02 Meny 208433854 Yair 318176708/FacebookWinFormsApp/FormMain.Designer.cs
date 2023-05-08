@@ -42,9 +42,9 @@
             this.labelHomwTownTitle = new System.Windows.Forms.Label();
             this.labelGenderTitle = new System.Windows.Forms.Label();
             this.labelUserNameTitle = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfileImage = new ResizePicturesBoxProxy();
             this.labelUserName = new System.Windows.Forms.Label();
-            this.pictureBoxCoverImage = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCoverImage = new ResizePicturesBoxProxy();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
             this.buttonDownloadAlbum = new System.Windows.Forms.Button();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
@@ -81,10 +81,9 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(916, 428);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Location = new System.Drawing.Point(687, 348);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(239, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(179, 23);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -92,10 +91,9 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(915, 430);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogout.Location = new System.Drawing.Point(686, 349);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(239, 28);
+            this.buttonLogout.Size = new System.Drawing.Size(179, 23);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -108,11 +106,11 @@
             this.tabControlMainComponent.Controls.Add(this.tabPageAlbums);
             this.tabControlMainComponent.Controls.Add(this.tabPagePosts);
             this.tabControlMainComponent.Controls.Add(this.tabPageCommonInterests);
-            this.tabControlMainComponent.Location = new System.Drawing.Point(1, 166);
-            this.tabControlMainComponent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControlMainComponent.Location = new System.Drawing.Point(1, 135);
+            this.tabControlMainComponent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabControlMainComponent.Name = "tabControlMainComponent";
             this.tabControlMainComponent.SelectedIndex = 0;
-            this.tabControlMainComponent.Size = new System.Drawing.Size(1169, 496);
+            this.tabControlMainComponent.Size = new System.Drawing.Size(877, 403);
             this.tabControlMainComponent.TabIndex = 54;
             // 
             // tabPageUserProfile
@@ -131,11 +129,11 @@
             this.tabPageUserProfile.Controls.Add(this.pictureBoxCoverImage);
             this.tabPageUserProfile.Controls.Add(this.buttonLogin);
             this.tabPageUserProfile.Controls.Add(this.buttonLogout);
-            this.tabPageUserProfile.Location = new System.Drawing.Point(4, 25);
-            this.tabPageUserProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageUserProfile.Location = new System.Drawing.Point(4, 22);
+            this.tabPageUserProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageUserProfile.Name = "tabPageUserProfile";
-            this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageUserProfile.Size = new System.Drawing.Size(1161, 467);
+            this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageUserProfile.Size = new System.Drawing.Size(869, 377);
             this.tabPageUserProfile.TabIndex = 0;
             this.tabPageUserProfile.Text = "My Profile";
             this.tabPageUserProfile.UseVisualStyleBackColor = true;
@@ -144,7 +142,8 @@
             // 
             this.labelBierthday.AutoSize = true;
             this.labelBierthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBierthday.Location = new System.Drawing.Point(832, 276);
+            this.labelBierthday.Location = new System.Drawing.Point(624, 224);
+            this.labelBierthday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBierthday.Name = "labelBierthday";
             this.labelBierthday.Size = new System.Drawing.Size(0, 20);
             this.labelBierthday.TabIndex = 64;
@@ -153,7 +152,8 @@
             // 
             this.labelHomeTown.AutoSize = true;
             this.labelHomeTown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHomeTown.Location = new System.Drawing.Point(832, 231);
+            this.labelHomeTown.Location = new System.Drawing.Point(624, 188);
+            this.labelHomeTown.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHomeTown.Name = "labelHomeTown";
             this.labelHomeTown.Size = new System.Drawing.Size(0, 20);
             this.labelHomeTown.TabIndex = 63;
@@ -162,7 +162,8 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(832, 183);
+            this.labelEmail.Location = new System.Drawing.Point(624, 149);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(0, 20);
             this.labelEmail.TabIndex = 62;
@@ -171,7 +172,8 @@
             // 
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(832, 139);
+            this.labelGender.Location = new System.Drawing.Point(624, 113);
+            this.labelGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(0, 20);
             this.labelGender.TabIndex = 61;
@@ -180,7 +182,8 @@
             // 
             this.labelBirthdayTitle.AutoSize = true;
             this.labelBirthdayTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBirthdayTitle.Location = new System.Drawing.Point(665, 276);
+            this.labelBirthdayTitle.Location = new System.Drawing.Point(499, 224);
+            this.labelBirthdayTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelBirthdayTitle.Name = "labelBirthdayTitle";
             this.labelBirthdayTitle.Size = new System.Drawing.Size(80, 20);
             this.labelBirthdayTitle.TabIndex = 60;
@@ -190,7 +193,8 @@
             // 
             this.labelEmailTitle.AutoSize = true;
             this.labelEmailTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmailTitle.Location = new System.Drawing.Point(665, 183);
+            this.labelEmailTitle.Location = new System.Drawing.Point(499, 149);
+            this.labelEmailTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEmailTitle.Name = "labelEmailTitle";
             this.labelEmailTitle.Size = new System.Drawing.Size(129, 20);
             this.labelEmailTitle.TabIndex = 59;
@@ -200,7 +204,8 @@
             // 
             this.labelHomwTownTitle.AutoSize = true;
             this.labelHomwTownTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHomwTownTitle.Location = new System.Drawing.Point(665, 231);
+            this.labelHomwTownTitle.Location = new System.Drawing.Point(499, 188);
+            this.labelHomwTownTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHomwTownTitle.Name = "labelHomwTownTitle";
             this.labelHomwTownTitle.Size = new System.Drawing.Size(108, 20);
             this.labelHomwTownTitle.TabIndex = 58;
@@ -210,7 +215,8 @@
             // 
             this.labelGenderTitle.AutoSize = true;
             this.labelGenderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGenderTitle.Location = new System.Drawing.Point(665, 139);
+            this.labelGenderTitle.Location = new System.Drawing.Point(499, 113);
+            this.labelGenderTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGenderTitle.Name = "labelGenderTitle";
             this.labelGenderTitle.Size = new System.Drawing.Size(74, 20);
             this.labelGenderTitle.TabIndex = 57;
@@ -220,7 +226,8 @@
             // 
             this.labelUserNameTitle.AutoSize = true;
             this.labelUserNameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserNameTitle.Location = new System.Drawing.Point(665, 95);
+            this.labelUserNameTitle.Location = new System.Drawing.Point(499, 77);
+            this.labelUserNameTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserNameTitle.Name = "labelUserNameTitle";
             this.labelUserNameTitle.Size = new System.Drawing.Size(103, 20);
             this.labelUserNameTitle.TabIndex = 56;
@@ -232,10 +239,10 @@
             this.pictureBoxProfileImage.ErrorImage = null;
             this.pictureBoxProfileImage.Image = global::BasicFacebookFeatures.Properties.Resources.EmptyUserLogo;
             this.pictureBoxProfileImage.InitialImage = null;
-            this.pictureBoxProfileImage.Location = new System.Drawing.Point(19, 17);
-            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxProfileImage.Location = new System.Drawing.Point(14, 14);
+            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
-            this.pictureBoxProfileImage.Size = new System.Drawing.Size(213, 200);
+            this.pictureBoxProfileImage.Size = new System.Drawing.Size(161, 163);
             this.pictureBoxProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxProfileImage.TabIndex = 53;
             this.pictureBoxProfileImage.TabStop = false;
@@ -244,17 +251,18 @@
             // 
             this.labelUserName.AutoSize = true;
             this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUserName.Location = new System.Drawing.Point(832, 95);
+            this.labelUserName.Location = new System.Drawing.Point(624, 77);
+            this.labelUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserName.Name = "labelUserName";
             this.labelUserName.Size = new System.Drawing.Size(0, 20);
             this.labelUserName.TabIndex = 55;
             // 
             // pictureBoxCoverImage
             // 
-            this.pictureBoxCoverImage.Location = new System.Drawing.Point(103, 78);
-            this.pictureBoxCoverImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxCoverImage.Location = new System.Drawing.Point(77, 63);
+            this.pictureBoxCoverImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxCoverImage.Name = "pictureBoxCoverImage";
-            this.pictureBoxCoverImage.Size = new System.Drawing.Size(544, 335);
+            this.pictureBoxCoverImage.Size = new System.Drawing.Size(408, 272);
             this.pictureBoxCoverImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCoverImage.TabIndex = 54;
             this.pictureBoxCoverImage.TabStop = false;
@@ -264,11 +272,11 @@
             this.tabPageAlbums.Controls.Add(this.buttonDownloadAlbum);
             this.tabPageAlbums.Controls.Add(this.listBoxAlbums);
             this.tabPageAlbums.Controls.Add(this.labelAlbumsTitle);
-            this.tabPageAlbums.Location = new System.Drawing.Point(4, 25);
-            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageAlbums.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageAlbums.Name = "tabPageAlbums";
-            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageAlbums.Size = new System.Drawing.Size(1161, 467);
+            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAlbums.Size = new System.Drawing.Size(869, 377);
             this.tabPageAlbums.TabIndex = 1;
             this.tabPageAlbums.Text = "Albums";
             this.tabPageAlbums.UseVisualStyleBackColor = true;
@@ -276,10 +284,10 @@
             // buttonDownloadAlbum
             // 
             this.buttonDownloadAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDownloadAlbum.Location = new System.Drawing.Point(495, 347);
-            this.buttonDownloadAlbum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonDownloadAlbum.Location = new System.Drawing.Point(371, 282);
+            this.buttonDownloadAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDownloadAlbum.Name = "buttonDownloadAlbum";
-            this.buttonDownloadAlbum.Size = new System.Drawing.Size(317, 63);
+            this.buttonDownloadAlbum.Size = new System.Drawing.Size(238, 51);
             this.buttonDownloadAlbum.TabIndex = 3;
             this.buttonDownloadAlbum.Text = "Please Select Albums To Download!";
             this.buttonDownloadAlbum.UseMnemonic = false;
@@ -289,12 +297,11 @@
             // listBoxAlbums
             // 
             this.listBoxAlbums.FormattingEnabled = true;
-            this.listBoxAlbums.ItemHeight = 16;
-            this.listBoxAlbums.Location = new System.Drawing.Point(72, 70);
-            this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxAlbums.Location = new System.Drawing.Point(54, 57);
+            this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxAlbums.Name = "listBoxAlbums";
             this.listBoxAlbums.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.listBoxAlbums.Size = new System.Drawing.Size(365, 340);
+            this.listBoxAlbums.Size = new System.Drawing.Size(275, 277);
             this.listBoxAlbums.TabIndex = 1;
             this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
             // 
@@ -302,7 +309,8 @@
             // 
             this.labelAlbumsTitle.AutoSize = true;
             this.labelAlbumsTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAlbumsTitle.Location = new System.Drawing.Point(491, 12);
+            this.labelAlbumsTitle.Location = new System.Drawing.Point(368, 10);
+            this.labelAlbumsTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAlbumsTitle.Name = "labelAlbumsTitle";
             this.labelAlbumsTitle.Size = new System.Drawing.Size(146, 29);
             this.labelAlbumsTitle.TabIndex = 0;
@@ -311,11 +319,11 @@
             // tabPagePosts
             // 
             this.tabPagePosts.Controls.Add(this.dataGridViewPosts);
-            this.tabPagePosts.Location = new System.Drawing.Point(4, 25);
-            this.tabPagePosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPagePosts.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPagePosts.Name = "tabPagePosts";
-            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPagePosts.Size = new System.Drawing.Size(1161, 467);
+            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagePosts.Size = new System.Drawing.Size(869, 377);
             this.tabPagePosts.TabIndex = 2;
             this.tabPagePosts.Text = "Posts";
             this.tabPagePosts.UseVisualStyleBackColor = true;
@@ -329,11 +337,11 @@
             this.ColumnLikes,
             this.ColumnUploadDate});
             this.dataGridViewPosts.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridViewPosts.Location = new System.Drawing.Point(189, 98);
-            this.dataGridViewPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewPosts.Location = new System.Drawing.Point(142, 80);
+            this.dataGridViewPosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewPosts.Name = "dataGridViewPosts";
             this.dataGridViewPosts.RowTemplate.Height = 24;
-            this.dataGridViewPosts.Size = new System.Drawing.Size(781, 277);
+            this.dataGridViewPosts.Size = new System.Drawing.Size(586, 225);
             this.dataGridViewPosts.TabIndex = 0;
             // 
             // ColumnPost
@@ -364,11 +372,11 @@
             this.tabPageCommonInterests.Controls.Add(this.buttonFindCommonInterests);
             this.tabPageCommonInterests.Controls.Add(this.listBoxCommonInterests);
             this.tabPageCommonInterests.Controls.Add(this.listBoxMyPages);
-            this.tabPageCommonInterests.Location = new System.Drawing.Point(4, 25);
-            this.tabPageCommonInterests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPageCommonInterests.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPageCommonInterests.Name = "tabPageCommonInterests";
-            this.tabPageCommonInterests.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPageCommonInterests.Size = new System.Drawing.Size(1161, 467);
+            this.tabPageCommonInterests.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageCommonInterests.Size = new System.Drawing.Size(869, 377);
             this.tabPageCommonInterests.TabIndex = 3;
             this.tabPageCommonInterests.Text = "Common Interests";
             this.tabPageCommonInterests.UseVisualStyleBackColor = true;
@@ -377,7 +385,8 @@
             // 
             this.labelCommonPages.AutoSize = true;
             this.labelCommonPages.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommonPages.Location = new System.Drawing.Point(767, 4);
+            this.labelCommonPages.Location = new System.Drawing.Point(575, 3);
+            this.labelCommonPages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCommonPages.Name = "labelCommonPages";
             this.labelCommonPages.Size = new System.Drawing.Size(196, 24);
             this.labelCommonPages.TabIndex = 9;
@@ -388,7 +397,8 @@
             // 
             this.labelLikedPagesTitle.AutoSize = true;
             this.labelLikedPagesTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLikedPagesTitle.Location = new System.Drawing.Point(52, 4);
+            this.labelLikedPagesTitle.Location = new System.Drawing.Point(39, 3);
+            this.labelLikedPagesTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLikedPagesTitle.Name = "labelLikedPagesTitle";
             this.labelLikedPagesTitle.Size = new System.Drawing.Size(163, 24);
             this.labelLikedPagesTitle.TabIndex = 6;
@@ -398,7 +408,8 @@
             // 
             this.labelCommonFriendTitle.AutoSize = true;
             this.labelCommonFriendTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommonFriendTitle.Location = new System.Drawing.Point(439, 17);
+            this.labelCommonFriendTitle.Location = new System.Drawing.Point(329, 14);
+            this.labelCommonFriendTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCommonFriendTitle.Name = "labelCommonFriendTitle";
             this.labelCommonFriendTitle.Size = new System.Drawing.Size(225, 24);
             this.labelCommonFriendTitle.TabIndex = 5;
@@ -409,19 +420,19 @@
             // 
             this.labelCommonFriendName.AutoSize = true;
             this.labelCommonFriendName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommonFriendName.Location = new System.Drawing.Point(467, 69);
+            this.labelCommonFriendName.Location = new System.Drawing.Point(350, 56);
+            this.labelCommonFriendName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCommonFriendName.Name = "labelCommonFriendName";
-            this.labelCommonFriendName.Size = new System.Drawing.Size(57, 20);
+            this.labelCommonFriendName.Size = new System.Drawing.Size(0, 20);
             this.labelCommonFriendName.TabIndex = 4;
-            this.labelCommonFriendName.Text = "";
             this.labelCommonFriendName.Visible = false;
             // 
             // pictureBoxCommonFriendPicture
             // 
-            this.pictureBoxCommonFriendPicture.Location = new System.Drawing.Point(452, 100);
-            this.pictureBoxCommonFriendPicture.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxCommonFriendPicture.Location = new System.Drawing.Point(339, 81);
+            this.pictureBoxCommonFriendPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxCommonFriendPicture.Name = "pictureBoxCommonFriendPicture";
-            this.pictureBoxCommonFriendPicture.Size = new System.Drawing.Size(200, 199);
+            this.pictureBoxCommonFriendPicture.Size = new System.Drawing.Size(150, 162);
             this.pictureBoxCommonFriendPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCommonFriendPicture.TabIndex = 3;
             this.pictureBoxCommonFriendPicture.TabStop = false;
@@ -429,10 +440,10 @@
             // buttonFindCommonInterests
             // 
             this.buttonFindCommonInterests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFindCommonInterests.Location = new System.Drawing.Point(400, 330);
-            this.buttonFindCommonInterests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonFindCommonInterests.Location = new System.Drawing.Point(300, 268);
+            this.buttonFindCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonFindCommonInterests.Name = "buttonFindCommonInterests";
-            this.buttonFindCommonInterests.Size = new System.Drawing.Size(313, 62);
+            this.buttonFindCommonInterests.Size = new System.Drawing.Size(235, 50);
             this.buttonFindCommonInterests.TabIndex = 2;
             this.buttonFindCommonInterests.Text = "Find Your Friend With The Most Common Interests!";
             this.buttonFindCommonInterests.UseVisualStyleBackColor = true;
@@ -441,21 +452,19 @@
             // listBoxCommonInterests
             // 
             this.listBoxCommonInterests.FormattingEnabled = true;
-            this.listBoxCommonInterests.ItemHeight = 16;
-            this.listBoxCommonInterests.Location = new System.Drawing.Point(771, 33);
-            this.listBoxCommonInterests.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxCommonInterests.Location = new System.Drawing.Point(578, 27);
+            this.listBoxCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxCommonInterests.Name = "listBoxCommonInterests";
-            this.listBoxCommonInterests.Size = new System.Drawing.Size(279, 388);
+            this.listBoxCommonInterests.Size = new System.Drawing.Size(210, 316);
             this.listBoxCommonInterests.TabIndex = 1;
             // 
             // listBoxMyPages
             // 
             this.listBoxMyPages.FormattingEnabled = true;
-            this.listBoxMyPages.ItemHeight = 16;
-            this.listBoxMyPages.Location = new System.Drawing.Point(53, 36);
-            this.listBoxMyPages.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxMyPages.Location = new System.Drawing.Point(40, 29);
+            this.listBoxMyPages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxMyPages.Name = "listBoxMyPages";
-            this.listBoxMyPages.Size = new System.Drawing.Size(291, 388);
+            this.listBoxMyPages.Size = new System.Drawing.Size(219, 316);
             this.listBoxMyPages.TabIndex = 0;
             // 
             // pictureBoxMainLogo
@@ -463,9 +472,9 @@
             this.pictureBoxMainLogo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMainLogo.ErrorImage")));
             this.pictureBoxMainLogo.Image = global::BasicFacebookFeatures.Properties.Resources.thefacebookLogo;
             this.pictureBoxMainLogo.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBoxMainLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxMainLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxMainLogo.Name = "pictureBoxMainLogo";
-            this.pictureBoxMainLogo.Size = new System.Drawing.Size(1173, 166);
+            this.pictureBoxMainLogo.Size = new System.Drawing.Size(880, 135);
             this.pictureBoxMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMainLogo.TabIndex = 53;
             this.pictureBoxMainLogo.TabStop = false;
@@ -477,15 +486,14 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.ClientSize = new System.Drawing.Size(888, 537);
             this.Controls.Add(this.tabControlMainComponent);
             this.Controls.Add(this.pictureBoxMainLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TheFacebook";
@@ -516,8 +524,8 @@
         private System.Windows.Forms.TabPage tabPageAlbums;
         private System.Windows.Forms.TabPage tabPagePosts;
         private System.Windows.Forms.TabPage tabPageCommonInterests;
-        private System.Windows.Forms.PictureBox pictureBoxCoverImage;
-        private System.Windows.Forms.PictureBox pictureBoxProfileImage;
+        private ResizePicturesBoxProxy pictureBoxCoverImage;
+        private ResizePicturesBoxProxy pictureBoxProfileImage;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelBierthday;
         private System.Windows.Forms.Label labelHomeTown;

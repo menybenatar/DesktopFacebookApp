@@ -26,18 +26,19 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            FacebookWrapper.LoginResult loginResult = FacebookService.Login(
-                  "908976190225309",
-                  "email",
-                  "user_hometown",
-                  "user_birthday",
-                  "user_gender",
-                  "user_photos",
-                  "user_friends",
-                  "user_likes",
-                  "user_posts",
-                  "public_profile",
-                  "groups_access_member_info");
+            //FacebookWrapper.LoginResult loginResult = FacebookService.Login(
+            //      "908976190225309",
+            //      "email",
+            //      "user_hometown",
+            //      "user_birthday",
+            //      "user_gender",
+            //      "user_photos",
+            //      "user_friends",
+            //      "user_likes",
+            //      "user_posts",
+            //      "public_profile",
+            //      "groups_access_member_info");
+            FacebookWrapper.LoginResult loginResult = FacebookService.Connect("EAAM6tYLte50BAPDvBZAvFAn2Lv94GAITqPgVVJn6NWZCe3K5zDdpqIogBIR2IPnJ0ZB4VBYxU1fWCk6ZBQkiXsTmX31C3ceeEOF8qS4y2nlT9vZAztA3qDYXdZBama3GVDKGyMu4sb0qsJA6VfdkEvp2HMxuMu3UcTAZCNwckKplnq45IN7h8dt");
             if (loginResult != null && !string.IsNullOrEmpty(loginResult.AccessToken))
             {
                 m_LoggedInUser = loginResult.LoggedInUser;
@@ -74,7 +75,7 @@ namespace BasicFacebookFeatures
             Random random = new Random();
             foreach (Post post in m_LoggedInUser.Posts)
             {
-                dataGridViewPosts.Rows.Add(post, random.Next(1, 200), post.CreatedTime);
+                dataGridViewPosts.Rows.Add(post.Name, random.Next(1, 200), post.CreatedTime);
             }
         }
 
@@ -151,14 +152,22 @@ namespace BasicFacebookFeatures
 
         private void buttonFindCommonInterests_Click(object sender, EventArgs e)
         {
-            KeyValuePair<User, List<Page>> theBestFriend = m_commonInterestsFinder.GetCommonInterestsFriends();
-            labelCommonFriendName.Text = theBestFriend.Key.Name;
-            labelCommonFriendName.Visible = true;
-            labelCommonFriendTitle.Visible = true;
-            labelCommonPages.Visible = true;
-            listBoxCommonInterests.Items.Clear();
-            pictureBoxCommonFriendPicture.LoadAsync(theBestFriend.Key.PictureLargeURL);
-            loadCommonPages(theBestFriend.Value);
+            if(m_commonInterestsFinder != null)
+            {
+                KeyValuePair<User, List<Page>> theBestFriend = m_commonInterestsFinder.GetCommonInterestsFriends();
+                labelCommonFriendName.Text = theBestFriend.Key.Name;
+                labelCommonFriendName.Visible = true;
+                labelCommonFriendTitle.Visible = true;
+                labelCommonPages.Visible = true;
+                listBoxCommonInterests.Items.Clear();
+                pictureBoxCommonFriendPicture.LoadAsync(theBestFriend.Key.PictureLargeURL);
+                loadCommonPages(theBestFriend.Value);
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+
         }
 
         private void loadCommonPages(List<Page> i_Pages)
