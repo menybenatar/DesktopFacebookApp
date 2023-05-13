@@ -97,6 +97,8 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPhoto.cs" />
+    <Compile Include="PhotoAdpter.cs" />
     <Compile Include="LoggedInUserSingleton.cs" />
     <Compile Include="ResizePicturesBoxProxy.cs">
       <SubType>Component</SubType>

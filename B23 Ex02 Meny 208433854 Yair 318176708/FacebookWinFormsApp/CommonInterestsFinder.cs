@@ -10,7 +10,7 @@ namespace BasicFacebookFeatures
 
         public CommonInterestsFinder()
         {
-            r_LoggedInUser = LoggedInUserSingleton.Instance.LoggedInUser;
+            r_LoggedInUser = LoggedInUserSingleton.Instance?.LoggedInUser;
         }
 
         public KeyValuePair<User, List<Page>> GetCommonInterestsFriends()

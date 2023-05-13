@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures
@@ -9,7 +10,7 @@ namespace BasicFacebookFeatures
 
         public AlbumDownloader()
         {
-            r_Albums = LoggedInUserSingleton.Instance.LoggedInUser.Albums;
+            r_Albums = LoggedInUserSingleton.Instance?.LoggedInUser?.Albums;
         }
 
         public bool DownloadAlbumsImages(List<int> i_SelectedIndexs, string i_Path)
@@ -23,7 +24,8 @@ namespace BasicFacebookFeatures
                     {
                         foreach (Photo photo in r_Albums[index].Photos)
                         {
-                            photo.ImageNormal.Save($"{i_Path}\\Image{photo.Id}.jpg");
+                            PhotoAdpter photoAdpter = new PhotoAdpter() { Photo = photo };
+                            photoAdpter.Save(i_Path);
                         }
                     }
                 }

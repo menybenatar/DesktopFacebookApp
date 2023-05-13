@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using Facebook;
+using System.Threading;
 
 namespace BasicFacebookFeatures
 {
@@ -28,13 +29,11 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                m_LoggedInUser = LoggedInUserSingleton.Instance.LoggedInUser;
-                m_AlbumDownloader = new AlbumDownloader();
-                m_commonInterestsFinder = new CommonInterestsFinder();
-                initData();
+                InitObjects();
+                new Thread(initData).Start();
                 buttonLogin.Visible = false;
                 buttonLogout.Visible = true;
-               
+
             }
             catch(Exception ex)
             {
@@ -42,47 +41,20 @@ namespace BasicFacebookFeatures
             }
         }
 
+        private void InitObjects()
+        {
+            m_LoggedInUser = LoggedInUserSingleton.Instance?.LoggedInUser;
+            m_AlbumDownloader = new AlbumDownloader();
+            m_commonInterestsFinder = new CommonInterestsFinder();
+        }
+
         private void initData()
         {
-            displayUserInfo();
-            loadAlbumsData();
-            loadPostsData();
-            loadPagesData();
+            new Thread(displayUserInfo).Start();
+            new Thread(loadAlbumsData).Start();
+            new Thread(loadPostsData).Start();
+            new Thread(loadPagesData).Start();
         }
-
-        private void loadPagesData()
-        {
-            foreach (Page page in m_LoggedInUser.LikedPages)
-            {
-                listBoxMyPages.Items.Add(page.Name);
-            }
-        }
-
-        private void loadPostsData()
-        {
-            Random random = new Random();
-            foreach (Post post in m_LoggedInUser.Posts)
-            {
-                dataGridViewPosts.Rows.Add(post.Name, random.Next(1, 200), post.CreatedTime);
-            }
-        }
-
-        private void loadAlbumsData()
-        {
-            foreach (Album album in m_LoggedInUser.Albums)
-            {
-                listBoxAlbums.Items.Add(album.Name);
-            }
-        }
-        private void loadCommonPages(List<Page> i_Pages)
-        {
-            foreach (Page page in i_Pages)
-            {
-                listBoxCommonInterests.Items.Add(page.Name);
-
-            }
-        }
-
         private void displayUserInfo()
         {
             pictureBoxProfileImage.LoadAsync(m_LoggedInUser.PictureLargeURL);
@@ -91,12 +63,46 @@ namespace BasicFacebookFeatures
             {
                 pictureBoxCoverImage.LoadAsync(coverUrl);
             }
+            labelHomeTown.Invoke(new Action(() => labelHomeTown.Text = m_LoggedInUser.Hometown?.Name != null ? m_LoggedInUser.Hometown.Name : "Holon"));
+            labelUserName.Invoke(new Action(() => labelUserName.Text = m_LoggedInUser.Name));
+            labelGender.Invoke(new Action(() => labelGender.Text = m_LoggedInUser.Gender.ToString()));
+            labelEmail.Invoke(new Action(() => labelEmail.Text = m_LoggedInUser.Email));
+            labelBierthday.Invoke(new Action(() => labelBierthday.Text = m_LoggedInUser.Birthday));
+        }
+        private void loadPagesData()
+        {
+            listBoxMyPages.Invoke(new Action(() => { listBoxMyPages.DisplayMember = "Name"; }));
 
-            labelHomeTown.Text = m_LoggedInUser.Hometown?.Name != null ? m_LoggedInUser.Hometown.Name : "Holon";
-            labelUserName.Text = m_LoggedInUser.Name;
-            labelGender.Text = m_LoggedInUser.Gender.ToString();
-            labelEmail.Text = m_LoggedInUser.Email;
-            labelBierthday.Text = m_LoggedInUser.Birthday;
+            foreach (Page page in m_LoggedInUser.LikedPages)
+            {
+                listBoxMyPages.Invoke(new Action(() => listBoxMyPages.Items.Add(page)));
+            }
+        }
+
+        private void loadPostsData()
+        {
+            Random random = new Random();
+            foreach (Post post in m_LoggedInUser.Posts)
+            {
+                dataGridViewPosts.Invoke(new Action(() => dataGridViewPosts.Rows.Add(post.Message, random.Next(1, 200), post.CreatedTime)));
+            }
+        }
+
+        private void loadAlbumsData()
+        {
+            listBoxAlbums.Invoke(new Action(() => listBoxAlbums.DisplayMember = "Name"));
+            foreach (Album album in m_LoggedInUser.Albums)
+            {
+                listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Add(album)));
+            }
+        }
+        private void loadCommonPages(List<Page> i_Pages)
+        {
+            listBoxCommonInterests.DisplayMember = "Name";
+            foreach (Page page in i_Pages)
+            {
+                listBoxCommonInterests.Items.Add(page);
+            }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -165,7 +171,6 @@ namespace BasicFacebookFeatures
             }
 
         }
-
 
     }
 }
