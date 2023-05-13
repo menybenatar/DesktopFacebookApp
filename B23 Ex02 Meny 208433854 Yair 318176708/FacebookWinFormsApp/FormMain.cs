@@ -26,18 +26,19 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (LoggedInUserSingleton.Instance.LoggedInUser != null)
-            { 
+            try
+            {
                 m_LoggedInUser = LoggedInUserSingleton.Instance.LoggedInUser;
                 m_AlbumDownloader = new AlbumDownloader();
                 m_commonInterestsFinder = new CommonInterestsFinder();
                 initData();
                 buttonLogin.Visible = false;
                 buttonLogout.Visible = true;
+               
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Login Failed, Please Try Again.");
+                MessageBox.Show($"Login Failed, Please Try Again.");
             }
         }
 
@@ -68,9 +69,17 @@ namespace BasicFacebookFeatures
 
         private void loadAlbumsData()
         {
-            foreach (Album page in m_LoggedInUser.Albums)
+            foreach (Album album in m_LoggedInUser.Albums)
             {
-                listBoxAlbums.Items.Add(page);
+                listBoxAlbums.Items.Add(album.Name);
+            }
+        }
+        private void loadCommonPages(List<Page> i_Pages)
+        {
+            foreach (Page page in i_Pages)
+            {
+                listBoxCommonInterests.Items.Add(page.Name);
+
             }
         }
 
@@ -157,12 +166,6 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void loadCommonPages(List<Page> i_Pages)
-        {
-            foreach (Page page in i_Pages)
-            {
-                listBoxCommonInterests.Items.Add(page.Name);
-            }
-        }
+
     }
 }
