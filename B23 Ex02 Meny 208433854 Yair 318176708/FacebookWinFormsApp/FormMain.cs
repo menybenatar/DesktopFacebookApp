@@ -26,24 +26,11 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            //FacebookWrapper.LoginResult loginResult = FacebookService.Login(
-            //      "908976190225309",
-            //      "email",
-            //      "user_hometown",
-            //      "user_birthday",
-            //      "user_gender",
-            //      "user_photos",
-            //      "user_friends",
-            //      "user_likes",
-            //      "user_posts",
-            //      "public_profile",
-            //      "groups_access_member_info");
-            FacebookWrapper.LoginResult loginResult = FacebookService.Connect("EAAM6tYLte50BAPDvBZAvFAn2Lv94GAITqPgVVJn6NWZCe3K5zDdpqIogBIR2IPnJ0ZB4VBYxU1fWCk6ZBQkiXsTmX31C3ceeEOF8qS4y2nlT9vZAztA3qDYXdZBama3GVDKGyMu4sb0qsJA6VfdkEvp2HMxuMu3UcTAZCNwckKplnq45IN7h8dt");
-            if (loginResult != null && !string.IsNullOrEmpty(loginResult.AccessToken))
-            {
-                m_LoggedInUser = loginResult.LoggedInUser;
-                m_AlbumDownloader = new AlbumDownloader(m_LoggedInUser.Albums);
-                m_commonInterestsFinder = new CommonInterestsFinder(m_LoggedInUser);
+            if (LoggedInUserSingleton.Instance.LoggedInUser != null)
+            { 
+                m_LoggedInUser = LoggedInUserSingleton.Instance.LoggedInUser;
+                m_AlbumDownloader = new AlbumDownloader();
+                m_commonInterestsFinder = new CommonInterestsFinder();
                 initData();
                 buttonLogin.Visible = false;
                 buttonLogout.Visible = true;

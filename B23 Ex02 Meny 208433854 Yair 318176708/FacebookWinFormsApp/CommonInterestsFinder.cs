@@ -8,9 +8,9 @@ namespace BasicFacebookFeatures
     {
         private readonly User r_LoggedInUser;
 
-        public CommonInterestsFinder(User i_LoggedInUser)
+        public CommonInterestsFinder()
         {
-            r_LoggedInUser = i_LoggedInUser;
+            r_LoggedInUser = LoggedInUserSingleton.Instance.LoggedInUser;
         }
 
         public KeyValuePair<User, List<Page>> GetCommonInterestsFriends()

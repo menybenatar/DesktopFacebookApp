@@ -7,9 +7,9 @@ namespace BasicFacebookFeatures
     {
         private readonly FacebookObjectCollection<Album> r_Albums;
 
-        public AlbumDownloader(FacebookObjectCollection<Album> i_Albums)
+        public AlbumDownloader()
         {
-            r_Albums = i_Albums;
+            r_Albums = LoggedInUserSingleton.Instance.LoggedInUser.Albums;
         }
 
         public bool DownloadAlbumsImages(List<int> i_SelectedIndexs, string i_Path)
