@@ -9,12 +9,12 @@ namespace BasicFacebookFeatures
 {
     public class ResizePicturesBoxProxy : PictureBox
     {
-        bool m_IsOpen = false;
-
+        private bool IsOpen { get; set; } = false;
+        
         protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
-            if(m_IsOpen)
+            if(IsOpen)
             {
                 this.Dock = System.Windows.Forms.DockStyle.None;
             }
@@ -23,7 +23,7 @@ namespace BasicFacebookFeatures
                 this.Dock = System.Windows.Forms.DockStyle.Fill;
             }
 
-            m_IsOpen = !m_IsOpen; 
+            IsOpen = !IsOpen; 
         }
 
     }

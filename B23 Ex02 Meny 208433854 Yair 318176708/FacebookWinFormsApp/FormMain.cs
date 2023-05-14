@@ -33,7 +33,6 @@ namespace BasicFacebookFeatures
                 new Thread(initData).Start();
                 buttonLogin.Visible = false;
                 buttonLogout.Visible = true;
-
             }
             catch(Exception ex)
             {
