@@ -70,11 +70,13 @@ namespace BasicFacebookFeatures
         }
         private void loadPagesData()
         {
-            listBoxMyPages.Invoke(new Action(() => { listBoxMyPages.DisplayMember = "Name"; }));
-
-            foreach (Page page in m_LoggedInUser.LikedPages)
+            if (!listBoxMyPages.InvokeRequired)
             {
-                listBoxMyPages.Invoke(new Action(() => listBoxMyPages.Items.Add(page)));
+                pageBindingSource.DataSource = m_LoggedInUser.LikedPages;
+            }
+            else
+            {
+                listBoxMyPages.Invoke(new Action(() => pageBindingSource.DataSource = m_LoggedInUser.LikedPages));
             }
         }
 

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label labelDescription;
+            System.Windows.Forms.Label labelName;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
@@ -42,9 +45,9 @@
             this.labelHomwTownTitle = new System.Windows.Forms.Label();
             this.labelGenderTitle = new System.Windows.Forms.Label();
             this.labelUserNameTitle = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new ResizePictureBoxProxy();
+            this.pictureBoxProfileImage = new BasicFacebookFeatures.ResizePictureBoxProxy();
             this.labelUserName = new System.Windows.Forms.Label();
-            this.pictureBoxCoverImage = new ResizePictureBoxProxy();
+            this.pictureBoxCoverImage = new BasicFacebookFeatures.ResizePictureBoxProxy();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
             this.buttonDownloadAlbum = new System.Windows.Forms.Button();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
@@ -55,6 +58,9 @@
             this.ColumnLikes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUploadDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageCommonInterests = new System.Windows.Forms.TabPage();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.pageBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelCommonPages = new System.Windows.Forms.Label();
             this.labelLikedPagesTitle = new System.Windows.Forms.Label();
             this.labelCommonFriendTitle = new System.Windows.Forms.Label();
@@ -67,6 +73,8 @@
             this.openFileDialogAlbumDownload = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogAlbumDownload = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialogAlbum = new System.Windows.Forms.FolderBrowserDialog();
+            labelDescription = new System.Windows.Forms.Label();
+            labelName = new System.Windows.Forms.Label();
             this.tabControlMainComponent.SuspendLayout();
             this.tabPageUserProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfileImage)).BeginInit();
@@ -75,9 +83,28 @@
             this.tabPagePosts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPosts)).BeginInit();
             this.tabPageCommonInterests.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCommonFriendPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainLogo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // labelDescription
+            // 
+            labelDescription.AutoSize = true;
+            labelDescription.Location = new System.Drawing.Point(314, 326);
+            labelDescription.Name = "labelDescription";
+            labelDescription.Size = new System.Drawing.Size(63, 13);
+            labelDescription.TabIndex = 9;
+            labelDescription.Text = "Description:";
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Location = new System.Drawing.Point(314, 352);
+            labelName.Name = "labelName";
+            labelName.Size = new System.Drawing.Size(38, 13);
+            labelName.TabIndex = 11;
+            labelName.Text = "Name:";
             // 
             // buttonLogin
             // 
@@ -107,7 +134,7 @@
             this.tabControlMainComponent.Controls.Add(this.tabPagePosts);
             this.tabControlMainComponent.Controls.Add(this.tabPageCommonInterests);
             this.tabControlMainComponent.Location = new System.Drawing.Point(1, 135);
-            this.tabControlMainComponent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControlMainComponent.Margin = new System.Windows.Forms.Padding(2);
             this.tabControlMainComponent.Name = "tabControlMainComponent";
             this.tabControlMainComponent.SelectedIndex = 0;
             this.tabControlMainComponent.Size = new System.Drawing.Size(877, 403);
@@ -130,9 +157,9 @@
             this.tabPageUserProfile.Controls.Add(this.buttonLogin);
             this.tabPageUserProfile.Controls.Add(this.buttonLogout);
             this.tabPageUserProfile.Location = new System.Drawing.Point(4, 22);
-            this.tabPageUserProfile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageUserProfile.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageUserProfile.Name = "tabPageUserProfile";
-            this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageUserProfile.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageUserProfile.Size = new System.Drawing.Size(869, 377);
             this.tabPageUserProfile.TabIndex = 0;
             this.tabPageUserProfile.Text = "My Profile";
@@ -240,7 +267,7 @@
             this.pictureBoxProfileImage.Image = global::BasicFacebookFeatures.Properties.Resources.EmptyUserLogo;
             this.pictureBoxProfileImage.InitialImage = null;
             this.pictureBoxProfileImage.Location = new System.Drawing.Point(14, 14);
-            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxProfileImage.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxProfileImage.Name = "pictureBoxProfileImage";
             this.pictureBoxProfileImage.Size = new System.Drawing.Size(161, 163);
             this.pictureBoxProfileImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,7 +287,7 @@
             // pictureBoxCoverImage
             // 
             this.pictureBoxCoverImage.Location = new System.Drawing.Point(77, 63);
-            this.pictureBoxCoverImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxCoverImage.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCoverImage.Name = "pictureBoxCoverImage";
             this.pictureBoxCoverImage.Size = new System.Drawing.Size(408, 272);
             this.pictureBoxCoverImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -273,9 +300,9 @@
             this.tabPageAlbums.Controls.Add(this.listBoxAlbums);
             this.tabPageAlbums.Controls.Add(this.labelAlbumsTitle);
             this.tabPageAlbums.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAlbums.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageAlbums.Name = "tabPageAlbums";
-            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageAlbums.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageAlbums.Size = new System.Drawing.Size(869, 377);
             this.tabPageAlbums.TabIndex = 1;
             this.tabPageAlbums.Text = "Albums";
@@ -285,7 +312,7 @@
             // 
             this.buttonDownloadAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDownloadAlbum.Location = new System.Drawing.Point(371, 282);
-            this.buttonDownloadAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDownloadAlbum.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDownloadAlbum.Name = "buttonDownloadAlbum";
             this.buttonDownloadAlbum.Size = new System.Drawing.Size(238, 51);
             this.buttonDownloadAlbum.TabIndex = 3;
@@ -298,7 +325,7 @@
             // 
             this.listBoxAlbums.FormattingEnabled = true;
             this.listBoxAlbums.Location = new System.Drawing.Point(54, 57);
-            this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxAlbums.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAlbums.Name = "listBoxAlbums";
             this.listBoxAlbums.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxAlbums.Size = new System.Drawing.Size(275, 277);
@@ -320,9 +347,9 @@
             // 
             this.tabPagePosts.Controls.Add(this.dataGridViewPosts);
             this.tabPagePosts.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagePosts.Margin = new System.Windows.Forms.Padding(2);
             this.tabPagePosts.Name = "tabPagePosts";
-            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagePosts.Padding = new System.Windows.Forms.Padding(2);
             this.tabPagePosts.Size = new System.Drawing.Size(869, 377);
             this.tabPagePosts.TabIndex = 2;
             this.tabPagePosts.Text = "Posts";
@@ -338,7 +365,7 @@
             this.ColumnUploadDate});
             this.dataGridViewPosts.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridViewPosts.Location = new System.Drawing.Point(142, 80);
-            this.dataGridViewPosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPosts.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPosts.Name = "dataGridViewPosts";
             this.dataGridViewPosts.RowTemplate.Height = 24;
             this.dataGridViewPosts.Size = new System.Drawing.Size(586, 225);
@@ -364,6 +391,10 @@
             // 
             // tabPageCommonInterests
             // 
+            this.tabPageCommonInterests.Controls.Add(labelDescription);
+            this.tabPageCommonInterests.Controls.Add(this.textBoxDescription);
+            this.tabPageCommonInterests.Controls.Add(labelName);
+            this.tabPageCommonInterests.Controls.Add(this.textBoxName);
             this.tabPageCommonInterests.Controls.Add(this.labelCommonPages);
             this.tabPageCommonInterests.Controls.Add(this.labelLikedPagesTitle);
             this.tabPageCommonInterests.Controls.Add(this.labelCommonFriendTitle);
@@ -373,13 +404,33 @@
             this.tabPageCommonInterests.Controls.Add(this.listBoxCommonInterests);
             this.tabPageCommonInterests.Controls.Add(this.listBoxMyPages);
             this.tabPageCommonInterests.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageCommonInterests.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageCommonInterests.Name = "tabPageCommonInterests";
-            this.tabPageCommonInterests.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageCommonInterests.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageCommonInterests.Size = new System.Drawing.Size(869, 377);
             this.tabPageCommonInterests.TabIndex = 3;
             this.tabPageCommonInterests.Text = "Common Interests";
             this.tabPageCommonInterests.UseVisualStyleBackColor = true;
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Description", true));
+            this.textBoxDescription.Location = new System.Drawing.Point(383, 323);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDescription.TabIndex = 10;
+            // 
+            // pageBindingSource
+            // 
+            this.pageBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Page);
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pageBindingSource, "Name", true));
+            this.textBoxName.Location = new System.Drawing.Point(383, 349);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.TabIndex = 12;
             // 
             // labelCommonPages
             // 
@@ -408,7 +459,7 @@
             // 
             this.labelCommonFriendTitle.AutoSize = true;
             this.labelCommonFriendTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCommonFriendTitle.Location = new System.Drawing.Point(329, 14);
+            this.labelCommonFriendTitle.Location = new System.Drawing.Point(296, 14);
             this.labelCommonFriendTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCommonFriendTitle.Name = "labelCommonFriendTitle";
             this.labelCommonFriendTitle.Size = new System.Drawing.Size(225, 24);
@@ -429,8 +480,8 @@
             // 
             // pictureBoxCommonFriendPicture
             // 
-            this.pictureBoxCommonFriendPicture.Location = new System.Drawing.Point(339, 81);
-            this.pictureBoxCommonFriendPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxCommonFriendPicture.Location = new System.Drawing.Point(333, 88);
+            this.pictureBoxCommonFriendPicture.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCommonFriendPicture.Name = "pictureBoxCommonFriendPicture";
             this.pictureBoxCommonFriendPicture.Size = new System.Drawing.Size(150, 162);
             this.pictureBoxCommonFriendPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -440,8 +491,8 @@
             // buttonFindCommonInterests
             // 
             this.buttonFindCommonInterests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonFindCommonInterests.Location = new System.Drawing.Point(300, 268);
-            this.buttonFindCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFindCommonInterests.Location = new System.Drawing.Point(286, 254);
+            this.buttonFindCommonInterests.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFindCommonInterests.Name = "buttonFindCommonInterests";
             this.buttonFindCommonInterests.Size = new System.Drawing.Size(235, 50);
             this.buttonFindCommonInterests.TabIndex = 2;
@@ -453,16 +504,18 @@
             // 
             this.listBoxCommonInterests.FormattingEnabled = true;
             this.listBoxCommonInterests.Location = new System.Drawing.Point(578, 27);
-            this.listBoxCommonInterests.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxCommonInterests.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxCommonInterests.Name = "listBoxCommonInterests";
             this.listBoxCommonInterests.Size = new System.Drawing.Size(210, 316);
             this.listBoxCommonInterests.TabIndex = 1;
             // 
             // listBoxMyPages
             // 
+            this.listBoxMyPages.DataSource = this.pageBindingSource;
+            this.listBoxMyPages.DisplayMember = "Name";
             this.listBoxMyPages.FormattingEnabled = true;
             this.listBoxMyPages.Location = new System.Drawing.Point(40, 29);
-            this.listBoxMyPages.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxMyPages.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxMyPages.Name = "listBoxMyPages";
             this.listBoxMyPages.Size = new System.Drawing.Size(219, 316);
             this.listBoxMyPages.TabIndex = 0;
@@ -472,7 +525,7 @@
             this.pictureBoxMainLogo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxMainLogo.ErrorImage")));
             this.pictureBoxMainLogo.Image = global::BasicFacebookFeatures.Properties.Resources.thefacebookLogo;
             this.pictureBoxMainLogo.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBoxMainLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxMainLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxMainLogo.Name = "pictureBoxMainLogo";
             this.pictureBoxMainLogo.Size = new System.Drawing.Size(880, 135);
             this.pictureBoxMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -489,7 +542,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(888, 537);
+            this.ClientSize = new System.Drawing.Size(888, 538);
             this.Controls.Add(this.tabControlMainComponent);
             this.Controls.Add(this.pictureBoxMainLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -508,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPosts)).EndInit();
             this.tabPageCommonInterests.ResumeLayout(false);
             this.tabPageCommonInterests.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pageBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCommonFriendPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMainLogo)).EndInit();
             this.ResumeLayout(false);
@@ -554,6 +608,9 @@
         private System.Windows.Forms.ListBox listBoxCommonInterests;
         private System.Windows.Forms.Label labelCommonPages;
         private System.Windows.Forms.Label labelLikedPagesTitle;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.BindingSource pageBindingSource;
+        private System.Windows.Forms.TextBox textBoxName;
     }
 }
 
