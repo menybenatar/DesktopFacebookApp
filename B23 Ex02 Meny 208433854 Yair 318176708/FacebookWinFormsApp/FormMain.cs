@@ -15,9 +15,9 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private User m_LoggedInUser;
-        private AlbumDownloader m_AlbumDownloader;
-        private CommonInterestsFinder m_commonInterestsFinder;
+        private User m_LoggedInUser { get; set; } = null;
+        private AlbumDownloader m_AlbumDownloader { get; set; } = null;
+        private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
 
         public FormMain()
         {
