@@ -100,7 +100,7 @@
     <Compile Include="IPhoto.cs" />
     <Compile Include="PhotoAdpter.cs" />
     <Compile Include="LoggedInUserSingleton.cs" />
-    <Compile Include="ResizePicturesBoxProxy.cs">
+    <Compile Include="ResizePictureBoxProxy.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />

@@ -42,9 +42,9 @@
             this.labelHomwTownTitle = new System.Windows.Forms.Label();
             this.labelGenderTitle = new System.Windows.Forms.Label();
             this.labelUserNameTitle = new System.Windows.Forms.Label();
-            this.pictureBoxProfileImage = new ResizePicturesBoxProxy();
+            this.pictureBoxProfileImage = new ResizePictureBoxProxy();
             this.labelUserName = new System.Windows.Forms.Label();
-            this.pictureBoxCoverImage = new ResizePicturesBoxProxy();
+            this.pictureBoxCoverImage = new ResizePictureBoxProxy();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
             this.buttonDownloadAlbum = new System.Windows.Forms.Button();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
@@ -524,8 +524,8 @@
         private System.Windows.Forms.TabPage tabPageAlbums;
         private System.Windows.Forms.TabPage tabPagePosts;
         private System.Windows.Forms.TabPage tabPageCommonInterests;
-        private ResizePicturesBoxProxy pictureBoxCoverImage;
-        private ResizePicturesBoxProxy pictureBoxProfileImage;
+        private ResizePictureBoxProxy pictureBoxCoverImage;
+        private ResizePictureBoxProxy pictureBoxProfileImage;
         private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label labelBierthday;
         private System.Windows.Forms.Label labelHomeTown;

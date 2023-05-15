@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace BasicFacebookFeatures
 {
-    public class ResizePicturesBoxProxy : PictureBox
+    public class ResizePictureBoxProxy : PictureBox
     {
         private bool IsOpen { get; set; } = false;
         
