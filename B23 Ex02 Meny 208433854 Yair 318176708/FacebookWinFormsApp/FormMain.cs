@@ -1,22 +1,20 @@
 ﻿using System;
+using System.Threading;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
-using Facebook;
-using System.Threading;
 
 namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
         private User m_LoggedInUser { get; set; } = null;
+
         private AlbumDownloader m_AlbumDownloader { get; set; } = null;
+
         private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
 
         public FormMain()
@@ -36,7 +34,7 @@ namespace BasicFacebookFeatures
             }
             catch(Exception ex)
             {
-                MessageBox.Show($"Login Failed, Please Try Again.");
+                MessageBox.Show($"{ex.Message}{Environment.NewLine}Login Failed, Please Try Again.");
             }
         }
 
@@ -54,6 +52,7 @@ namespace BasicFacebookFeatures
             new Thread(loadPostsData).Start();
             new Thread(loadPagesData).Start();
         }
+
         private void displayUserInfo()
         {
             pictureBoxProfileImage.LoadAsync(m_LoggedInUser.PictureLargeURL);
@@ -62,12 +61,14 @@ namespace BasicFacebookFeatures
             {
                 pictureBoxCoverImage.LoadAsync(coverUrl);
             }
+
             labelHomeTown.Invoke(new Action(() => labelHomeTown.Text = m_LoggedInUser.Hometown?.Name != null ? m_LoggedInUser.Hometown.Name : "Holon"));
             labelUserName.Invoke(new Action(() => labelUserName.Text = m_LoggedInUser.Name));
             labelGender.Invoke(new Action(() => labelGender.Text = m_LoggedInUser.Gender.ToString()));
             labelEmail.Invoke(new Action(() => labelEmail.Text = m_LoggedInUser.Email));
             labelBierthday.Invoke(new Action(() => labelBierthday.Text = m_LoggedInUser.Birthday));
         }
+
         private void loadPagesData()
         {
             if (!listBoxMyPages.InvokeRequired)
@@ -97,6 +98,7 @@ namespace BasicFacebookFeatures
                 listBoxAlbums.Invoke(new Action(() => listBoxAlbums.Items.Add(album)));
             }
         }
+
         private void loadCommonPages(List<Page> i_Pages)
         {
             listBoxCommonInterests.DisplayMember = "Name";
@@ -168,10 +170,8 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Please Login First.");
             }
-
         }
-
     }
 }

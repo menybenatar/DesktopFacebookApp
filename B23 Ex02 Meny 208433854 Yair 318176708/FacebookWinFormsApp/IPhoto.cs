@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures
 {
-    interface IPhoto
+    public interface IPhoto
     {
-         void Save(string i_filename);
+         void Save(string i_Filename);
     }
 }
