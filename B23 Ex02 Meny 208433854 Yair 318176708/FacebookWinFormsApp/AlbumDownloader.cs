@@ -22,11 +22,11 @@ namespace BasicFacebookFeatures
                 {
                     if (r_Albums[index] != null)
                     {
-                        PhotoAdpter photoAdpter = new PhotoAdpter();
+                        PhotoAdapter photoAadpter = new PhotoAdapter();
                         foreach (Photo photo in r_Albums[index].Photos)
                         {
-                            photoAdpter.Photo = photo;
-                            photoAdpter.Save(i_Path);
+                            photoAadpter.Photo = photo;
+                            photoAadpter.Save(i_Path);
                         }
                     }
                 }

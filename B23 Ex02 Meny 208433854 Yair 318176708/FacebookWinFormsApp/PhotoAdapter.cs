@@ -9,7 +9,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures
 {
-    public class PhotoAdpter : IPhoto
+    public class PhotoAdapter : IPhoto
     {
         public Photo Photo { get; set; }
         public void Save(string i_Path)
