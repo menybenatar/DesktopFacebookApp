@@ -91,7 +91,9 @@
   <ItemGroup>
     <Compile Include="AlbumDownloader.cs" />
     <Compile Include="AlbumsIterator.cs" />
+    <Compile Include="AscendingSorter.cs" />
     <Compile Include="CommonInterestsFinder.cs" />
+    <Compile Include="DescendingSorter.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +101,7 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="IPhoto.cs" />
+    <Compile Include="ISorterStrategy.cs" />
     <Compile Include="PhotoAdapter.cs" />
     <Compile Include="LoggedInUserSingleton.cs" />
     <Compile Include="ResizePictureBoxProxy.cs">
@@ -106,7 +109,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sorter.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>

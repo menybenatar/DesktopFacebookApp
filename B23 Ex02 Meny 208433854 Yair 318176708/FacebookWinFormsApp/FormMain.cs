@@ -16,8 +16,8 @@ namespace BasicFacebookFeatures
 
         private AlbumDownloader m_AlbumDownloader { get; set; } = null;
 
-        private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
-        private Sorter Sorter { get; set; }
+        private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null; 
+        private ISorterStrategy SorterStrategy { get; set;}
 
         public FormMain()
         {
@@ -45,7 +45,6 @@ namespace BasicFacebookFeatures
             m_LoggedInUser = LoggedInUserSingleton.Instance?.LoggedInUser;
             m_AlbumDownloader = new AlbumDownloader();
             m_commonInterestsFinder = new CommonInterestsFinder();
-            Sorter = new Sorter((page1, page2) => string.Compare(page2.Name, page1.Name));
         }
 
         private void initData()
@@ -196,8 +195,8 @@ namespace BasicFacebookFeatures
             if(m_LoggedInUser!=null)
             {
                 List<Page> items = m_LoggedInUser.LikedPages.Cast<Page>().ToList();
-                Sorter.ComparerMethod = (page1, page2) => string.Compare(page1.Name, page2.Name);
-                Sorter.Sort(items);
+                SorterStrategy = new AscendingSorter();
+                SorterStrategy.Sort(items);
                 pageBindingSource.DataSource = items;
             }
             else
@@ -211,14 +210,14 @@ namespace BasicFacebookFeatures
             if (m_LoggedInUser != null)
             {
                 List<Page> items = m_LoggedInUser.LikedPages.Cast<Page>().ToList();
-                Sorter.ComparerMethod = (page1, page2) => string.Compare(page2.Name, page1.Name);
-                Sorter.Sort(items);
+                SorterStrategy = new DescendingSorter();
+                SorterStrategy.Sort(items);
                 pageBindingSource.DataSource = items;
             }
             else
             {
                 MessageBox.Show("Please Login First.");
             }
-}
+        }
     }
 }
