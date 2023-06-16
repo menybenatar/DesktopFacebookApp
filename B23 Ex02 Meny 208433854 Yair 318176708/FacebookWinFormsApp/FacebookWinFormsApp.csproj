@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlbumDownloader.cs" />
+    <Compile Include="AlbumsIterator.cs" />
     <Compile Include="CommonInterestsFinder.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -139,9 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EmptyUserLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\..\..\..\..\..\..\..\packages\StyleCop.Analyzers.Unstable.1.2.0.435\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

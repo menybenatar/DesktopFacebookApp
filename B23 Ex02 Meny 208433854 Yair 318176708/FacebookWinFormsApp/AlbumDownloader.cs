@@ -1,40 +1,59 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using FacebookWrapper.ObjectModel;
 
 namespace BasicFacebookFeatures
 {
-    public class AlbumDownloader
+    public class AlbumDownloader : IEnumerable
     {
         private readonly FacebookObjectCollection<Album> r_Albums;
+        public List<Album> AlbumsToSave { get; set; }
 
         public AlbumDownloader()
         {
             r_Albums = LoggedInUserSingleton.Instance?.LoggedInUser?.Albums;
+            AlbumsToSave = new List<Album>();
         }
 
-        public bool DownloadAlbumsImages(List<int> i_SelectedIndexs, string i_Path)
+        public IEnumerator GetEnumerator()
         {
-            bool isAlbumsSaved = false;
+            return new AlbumsIterator(this);
+        }
+
+        public bool DownloadAlbumImages(Album i_Album, string i_Path)
+        {
+            bool isAlbumSaved = false;
             if(!string.IsNullOrEmpty(i_Path))
             {
-                foreach(int index in i_SelectedIndexs)
+                if (i_Album != null)
                 {
-                    if (r_Albums[index] != null)
+                    PhotoAdapter photoAadpter = new PhotoAdapter();
+                    foreach (Photo photo in i_Album.Photos)
                     {
-                        PhotoAdapter photoAadpter = new PhotoAdapter();
-                        foreach (Photo photo in r_Albums[index].Photos)
-                        {
-                            photoAadpter.Photo = photo;
-                            photoAadpter.Save(i_Path);
-                        }
+                        photoAadpter.Photo = photo;
+                        photoAadpter.Save(i_Path);
                     }
-                }
 
-                isAlbumsSaved = true;
+                    isAlbumSaved = true;
+                }
             }
 
-            return isAlbumsSaved;
+            return isAlbumSaved;
+        }
+
+        public bool LoadAlbumsToSaveByIndexes(List<int> i_Indexes)
+        {
+            AlbumsToSave.Clear();
+            foreach (int index in i_Indexes)
+            {
+                if (r_Albums[index] != null)
+                {
+                    AlbumsToSave.Add(r_Albums[index]);
+                }
+            }
+
+            return AlbumsToSave.Count > 0;
         }
     }
 }

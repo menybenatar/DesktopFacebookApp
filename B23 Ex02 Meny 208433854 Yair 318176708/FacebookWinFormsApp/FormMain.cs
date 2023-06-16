@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using System.Collections;
 
 namespace BasicFacebookFeatures
 {
@@ -131,7 +132,7 @@ namespace BasicFacebookFeatures
         private void buttonDownloadAlbum_Click(object sender, EventArgs e)
         {
             List<int> selectedItemIndexes = listBoxAlbums.SelectedIndices.Cast<int>().ToList();
-            bool isAlbumsSaved;
+            bool isAllAlbumsSaved = true;
             string message;
             if (selectedItemIndexes.Count <= 0)
             {
@@ -141,10 +142,24 @@ namespace BasicFacebookFeatures
             {
                 if (folderBrowserDialogAlbum.ShowDialog() == DialogResult.OK)
                 {
-                    isAlbumsSaved = m_AlbumDownloader.DownloadAlbumsImages(selectedItemIndexes, folderBrowserDialogAlbum.SelectedPath);
-                    message = isAlbumsSaved ?
-                        $"Your Album Was Saved Successfuly to {folderBrowserDialogAlbum.SelectedPath}." :
-                        $"Something Went Wrong, Please Try Again.";
+                    if(m_AlbumDownloader.LoadAlbumsToSaveByIndexes(selectedItemIndexes))
+                    {
+                        for (IEnumerator it = (m_AlbumDownloader as IEnumerable).GetEnumerator(); it.MoveNext();)
+                        {
+                            if (!m_AlbumDownloader.DownloadAlbumImages(it.Current as Album, folderBrowserDialogAlbum.SelectedPath))
+                            {
+                                isAllAlbumsSaved = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        isAllAlbumsSaved = false;
+                    }
+
+                    message = isAllAlbumsSaved ?
+                        $"All Of Your Album Was Saved Successfuly to {folderBrowserDialogAlbum.SelectedPath}." :
+                        $"Something Went Wrong, Some Of The Albums Were Not Saved. Please Try Again.";
                 }
                 else
                 {
