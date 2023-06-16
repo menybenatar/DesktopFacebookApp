@@ -73,6 +73,10 @@
             this.openFileDialogAlbumDownload = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogAlbumDownload = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialogAlbum = new System.Windows.Forms.FolderBrowserDialog();
+            this.buttonAscHebrew = new System.Windows.Forms.Button();
+            this.buttonDescHebrew = new System.Windows.Forms.Button();
+            this.buttonAscEnglish = new System.Windows.Forms.Button();
+            this.buttonDescEnglish = new System.Windows.Forms.Button();
             labelDescription = new System.Windows.Forms.Label();
             labelName = new System.Windows.Forms.Label();
             this.tabControlMainComponent.SuspendLayout();
@@ -391,6 +395,10 @@
             // 
             // tabPageCommonInterests
             // 
+            this.tabPageCommonInterests.Controls.Add(this.buttonDescEnglish);
+            this.tabPageCommonInterests.Controls.Add(this.buttonAscEnglish);
+            this.tabPageCommonInterests.Controls.Add(this.buttonDescHebrew);
+            this.tabPageCommonInterests.Controls.Add(this.buttonAscHebrew);
             this.tabPageCommonInterests.Controls.Add(labelDescription);
             this.tabPageCommonInterests.Controls.Add(this.textBoxDescription);
             this.tabPageCommonInterests.Controls.Add(labelName);
@@ -517,7 +525,7 @@
             this.listBoxMyPages.Location = new System.Drawing.Point(40, 29);
             this.listBoxMyPages.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxMyPages.Name = "listBoxMyPages";
-            this.listBoxMyPages.Size = new System.Drawing.Size(219, 316);
+            this.listBoxMyPages.Size = new System.Drawing.Size(219, 238);
             this.listBoxMyPages.TabIndex = 0;
             // 
             // pictureBoxMainLogo
@@ -536,6 +544,43 @@
             // openFileDialogAlbumDownload
             // 
             this.openFileDialogAlbumDownload.FileName = "openFileDialog1";
+            // 
+            // buttonAscHebrew
+            // 
+            this.buttonAscHebrew.Location = new System.Drawing.Point(53, 272);
+            this.buttonAscHebrew.Name = "buttonAscHebrew";
+            this.buttonAscHebrew.Size = new System.Drawing.Size(75, 45);
+            this.buttonAscHebrew.TabIndex = 13;
+            this.buttonAscHebrew.Text = "Ascending Hebrew";
+            this.buttonAscHebrew.UseVisualStyleBackColor = true;
+            this.buttonAscHebrew.Click += new System.EventHandler(this.buttonAscHebrew_Click);
+            // 
+            // buttonDescHebrew
+            // 
+            this.buttonDescHebrew.Location = new System.Drawing.Point(170, 272);
+            this.buttonDescHebrew.Name = "buttonDescHebrew";
+            this.buttonDescHebrew.Size = new System.Drawing.Size(75, 45);
+            this.buttonDescHebrew.TabIndex = 14;
+            this.buttonDescHebrew.Text = "Descending Hebrew";
+            this.buttonDescHebrew.UseVisualStyleBackColor = true;
+            // 
+            // buttonAscEnglish
+            // 
+            this.buttonAscEnglish.Location = new System.Drawing.Point(53, 323);
+            this.buttonAscEnglish.Name = "buttonAscEnglish";
+            this.buttonAscEnglish.Size = new System.Drawing.Size(75, 42);
+            this.buttonAscEnglish.TabIndex = 15;
+            this.buttonAscEnglish.Text = "Ascending English";
+            this.buttonAscEnglish.UseVisualStyleBackColor = true;
+            // 
+            // buttonDescEnglish
+            // 
+            this.buttonDescEnglish.Location = new System.Drawing.Point(170, 323);
+            this.buttonDescEnglish.Name = "buttonDescEnglish";
+            this.buttonDescEnglish.Size = new System.Drawing.Size(75, 42);
+            this.buttonDescEnglish.TabIndex = 16;
+            this.buttonDescEnglish.Text = "Descending English";
+            this.buttonDescEnglish.UseVisualStyleBackColor = true;
             // 
             // FormMain
             // 
@@ -611,6 +656,10 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.BindingSource pageBindingSource;
         private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Button buttonDescEnglish;
+        private System.Windows.Forms.Button buttonAscEnglish;
+        private System.Windows.Forms.Button buttonDescHebrew;
+        private System.Windows.Forms.Button buttonAscHebrew;
     }
 }
 
