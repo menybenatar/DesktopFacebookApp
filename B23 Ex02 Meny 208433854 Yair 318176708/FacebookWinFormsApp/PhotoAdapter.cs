@@ -20,7 +20,7 @@ namespace BasicFacebookFeatures
                 DateTime createdTime = Photo.CreatedTime.Value;
                 string createdTimeStr = $"{createdTime.Year}-{createdTime.Month}-{createdTime.Day} {createdTime.Hour}-{createdTime.Minute}-{createdTime.Second}";
                 string str = string.Format($"{i_Path}\\Image{Photo.Id} {createdTimeStr}.jpg");
-                Photo.ImageNormal.Save(str);
+                Photo.ImageNormal.Save(str); 
             }
         }
     }
