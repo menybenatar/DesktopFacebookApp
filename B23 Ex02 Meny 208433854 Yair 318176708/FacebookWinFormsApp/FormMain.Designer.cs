@@ -40,16 +40,16 @@
             this.labelHomeTown = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelGender = new System.Windows.Forms.Label();
-            this.labelBirthdayTitle = new System.Windows.Forms.Label();
-            this.labelEmailTitle = new System.Windows.Forms.Label();
-            this.labelHomwTownTitle = new System.Windows.Forms.Label();
-            this.labelGenderTitle = new System.Windows.Forms.Label();
-            this.labelUserNameTitle = new System.Windows.Forms.Label();
+            this.labelBirthdayTitle = new BasicFacebookFeatures.LabelObserver();
+            this.labelEmailTitle = new BasicFacebookFeatures.LabelObserver();
+            this.labelHomwTownTitle = new BasicFacebookFeatures.LabelObserver();
+            this.labelGenderTitle = new BasicFacebookFeatures.LabelObserver();
+            this.labelUserNameTitle = new BasicFacebookFeatures.LabelObserver();
             this.pictureBoxProfileImage = new BasicFacebookFeatures.ResizePictureBoxProxy();
             this.labelUserName = new System.Windows.Forms.Label();
             this.pictureBoxCoverImage = new BasicFacebookFeatures.ResizePictureBoxProxy();
             this.tabPageAlbums = new System.Windows.Forms.TabPage();
-            this.buttonDownloadAlbum = new System.Windows.Forms.Button();
+            this.buttonDownloadAlbum = new BasicFacebookFeatures.ButtonObserver();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
             this.labelAlbumsTitle = new System.Windows.Forms.Label();
             this.tabPagePosts = new System.Windows.Forms.TabPage();
@@ -58,8 +58,8 @@
             this.ColumnLikes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUploadDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageCommonInterests = new System.Windows.Forms.TabPage();
-            this.buttonDesc = new System.Windows.Forms.Button();
-            this.buttonAsc = new System.Windows.Forms.Button();
+            this.buttonDesc = new BasicFacebookFeatures.ButtonObserver();
+            this.buttonAsc = new BasicFacebookFeatures.ButtonObserver();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.pageBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxName = new System.Windows.Forms.TextBox();
@@ -68,7 +68,7 @@
             this.labelCommonFriendTitle = new System.Windows.Forms.Label();
             this.labelCommonFriendName = new System.Windows.Forms.Label();
             this.pictureBoxCommonFriendPicture = new System.Windows.Forms.PictureBox();
-            this.buttonFindCommonInterests = new System.Windows.Forms.Button();
+            this.buttonFindCommonInterests = new BasicFacebookFeatures.ButtonObserver();
             this.listBoxCommonInterests = new System.Windows.Forms.ListBox();
             this.listBoxMyPages = new System.Windows.Forms.ListBox();
             this.pictureBoxMainLogo = new System.Windows.Forms.PictureBox();
@@ -217,6 +217,7 @@
             this.labelBirthdayTitle.Size = new System.Drawing.Size(80, 20);
             this.labelBirthdayTitle.TabIndex = 60;
             this.labelBirthdayTitle.Text = "Birthday:";
+            this.labelBirthdayTitle.Visible = false;
             // 
             // labelEmailTitle
             // 
@@ -228,6 +229,7 @@
             this.labelEmailTitle.Size = new System.Drawing.Size(129, 20);
             this.labelEmailTitle.TabIndex = 59;
             this.labelEmailTitle.Text = "Email Address:";
+            this.labelEmailTitle.Visible = false;
             // 
             // labelHomwTownTitle
             // 
@@ -239,6 +241,7 @@
             this.labelHomwTownTitle.Size = new System.Drawing.Size(108, 20);
             this.labelHomwTownTitle.TabIndex = 58;
             this.labelHomwTownTitle.Text = "Home Town:";
+            this.labelHomwTownTitle.Visible = false;
             // 
             // labelGenderTitle
             // 
@@ -250,6 +253,7 @@
             this.labelGenderTitle.Size = new System.Drawing.Size(74, 20);
             this.labelGenderTitle.TabIndex = 57;
             this.labelGenderTitle.Text = "Gender:";
+            this.labelGenderTitle.Visible = false;
             // 
             // labelUserNameTitle
             // 
@@ -261,6 +265,7 @@
             this.labelUserNameTitle.Size = new System.Drawing.Size(103, 20);
             this.labelUserNameTitle.TabIndex = 56;
             this.labelUserNameTitle.Text = "User Name:";
+            this.labelUserNameTitle.Visible = false;
             // 
             // pictureBoxProfileImage
             // 
@@ -312,6 +317,7 @@
             // 
             // buttonDownloadAlbum
             // 
+            this.buttonDownloadAlbum.Enabled = false;
             this.buttonDownloadAlbum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDownloadAlbum.Location = new System.Drawing.Point(371, 282);
             this.buttonDownloadAlbum.Margin = new System.Windows.Forms.Padding(2);
@@ -418,6 +424,7 @@
             // 
             // buttonDesc
             // 
+            this.buttonDesc.Enabled = false;
             this.buttonDesc.Location = new System.Drawing.Point(170, 272);
             this.buttonDesc.Name = "buttonDesc";
             this.buttonDesc.Size = new System.Drawing.Size(75, 45);
@@ -428,6 +435,7 @@
             // 
             // buttonAsc
             // 
+            this.buttonAsc.Enabled = false;
             this.buttonAsc.Location = new System.Drawing.Point(53, 272);
             this.buttonAsc.Name = "buttonAsc";
             this.buttonAsc.Size = new System.Drawing.Size(75, 45);
@@ -514,6 +522,7 @@
             // 
             // buttonFindCommonInterests
             // 
+            this.buttonFindCommonInterests.Enabled = false;
             this.buttonFindCommonInterests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFindCommonInterests.Location = new System.Drawing.Point(286, 254);
             this.buttonFindCommonInterests.Margin = new System.Windows.Forms.Padding(2);
@@ -609,16 +618,16 @@
         private System.Windows.Forms.Label labelHomeTown;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelGender;
-        private System.Windows.Forms.Label labelBirthdayTitle;
-        private System.Windows.Forms.Label labelEmailTitle;
-        private System.Windows.Forms.Label labelHomwTownTitle;
-        private System.Windows.Forms.Label labelGenderTitle;
-        private System.Windows.Forms.Label labelUserNameTitle;
+        private LabelObserver labelBirthdayTitle;
+        private LabelObserver labelEmailTitle;
+        private LabelObserver labelHomwTownTitle;
+        private LabelObserver labelGenderTitle;
+        private LabelObserver labelUserNameTitle;
         private System.Windows.Forms.ListBox listBoxAlbums;
         private System.Windows.Forms.Label labelAlbumsTitle;
         private System.Windows.Forms.OpenFileDialog openFileDialogAlbumDownload;
         private System.Windows.Forms.SaveFileDialog saveFileDialogAlbumDownload;
-        private System.Windows.Forms.Button buttonDownloadAlbum;
+        private ButtonObserver buttonDownloadAlbum;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogAlbum;
         private System.Windows.Forms.DataGridView dataGridViewPosts;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPost;
@@ -628,15 +637,15 @@
         private System.Windows.Forms.Label labelCommonFriendTitle;
         private System.Windows.Forms.Label labelCommonFriendName;
         private System.Windows.Forms.PictureBox pictureBoxCommonFriendPicture;
-        private System.Windows.Forms.Button buttonFindCommonInterests;
+        private ButtonObserver buttonFindCommonInterests;
         private System.Windows.Forms.ListBox listBoxCommonInterests;
         private System.Windows.Forms.Label labelCommonPages;
         private System.Windows.Forms.Label labelLikedPagesTitle;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.BindingSource pageBindingSource;
         private System.Windows.Forms.TextBox textBoxName;
-        private System.Windows.Forms.Button buttonDesc;
-        private System.Windows.Forms.Button buttonAsc;
+        private ButtonObserver buttonDesc;
+        private ButtonObserver buttonAsc;
     }
 }
 

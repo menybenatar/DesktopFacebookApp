@@ -16,13 +16,30 @@ namespace BasicFacebookFeatures
 
         private AlbumDownloader m_AlbumDownloader { get; set; } = null;
 
-        private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null; 
+        private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
+
         private ISorterStrategy SorterStrategy { get; set;}
+
+        private ControlNotifier m_ControlNotifier = new ControlNotifier();
 
         public FormMain()
         {
             InitializeComponent();
+            attachControlObservers();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
+        }
+
+        private void attachControlObservers()
+        {
+            m_ControlNotifier.AttachObserver(buttonDownloadAlbum);
+            m_ControlNotifier.AttachObserver(buttonAsc);
+            m_ControlNotifier.AttachObserver(buttonDesc);
+            m_ControlNotifier.AttachObserver(buttonFindCommonInterests);
+            m_ControlNotifier.AttachObserver(labelBirthdayTitle);
+            m_ControlNotifier.AttachObserver(labelEmailTitle);
+            m_ControlNotifier.AttachObserver(labelUserNameTitle);
+            m_ControlNotifier.AttachObserver(labelGenderTitle);
+            m_ControlNotifier.AttachObserver(labelHomwTownTitle);
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -42,7 +59,9 @@ namespace BasicFacebookFeatures
 
         private void InitObjects()
         {
+            const bool v_IsLoggedIn = true;
             m_LoggedInUser = LoggedInUserSingleton.Instance?.LoggedInUser;
+            m_ControlNotifier.NotifyControlObservers(v_IsLoggedIn);
             m_AlbumDownloader = new AlbumDownloader();
             m_commonInterestsFinder = new CommonInterestsFinder();
         }
@@ -112,8 +131,10 @@ namespace BasicFacebookFeatures
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
+            const bool v_IsLoggedIn = false;
 			FacebookService.LogoutWithUI();
-			buttonLogin.Visible = true;
+            m_ControlNotifier.NotifyControlObservers(v_IsLoggedIn);
+            buttonLogin.Visible = true;
 			buttonLogout.Visible = false;
 		}
 

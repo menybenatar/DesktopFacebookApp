@@ -92,7 +92,11 @@
     <Compile Include="AlbumDownloader.cs" />
     <Compile Include="AlbumsIterator.cs" />
     <Compile Include="AscendingSorter.cs" />
+    <Compile Include="ButtonObserver.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CommonInterestsFinder.cs" />
+    <Compile Include="ControlNotifier.cs" />
     <Compile Include="DescendingSorter.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -100,8 +104,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="IControlObserver.cs" />
     <Compile Include="IPhoto.cs" />
     <Compile Include="ISorterStrategy.cs" />
+    <Compile Include="LabelObserver.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PhotoAdapter.cs" />
     <Compile Include="LoggedInUserSingleton.cs" />
     <Compile Include="ResizePictureBoxProxy.cs">

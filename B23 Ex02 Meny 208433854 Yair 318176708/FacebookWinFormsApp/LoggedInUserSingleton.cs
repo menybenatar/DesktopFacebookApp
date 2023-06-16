@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
@@ -8,6 +9,7 @@ namespace BasicFacebookFeatures
     {
         private static LoggedInUserSingleton s_Instance = null;
         private static object s_LockObj = new object();
+
 
         public User LoggedInUser { get; private set; } = null;
 
