@@ -18,7 +18,7 @@ namespace BasicFacebookFeatures
 
         private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
 
-        private Sorter<Page> SorterStrategy { get; set;}
+        private Sorter<Page> m_SorterPages { get; set;}
 
         private ControlNotifier m_ControlNotifier = new ControlNotifier();
 
@@ -64,7 +64,7 @@ namespace BasicFacebookFeatures
             m_ControlNotifier.NotifyControlObservers(v_IsLoggedIn);
             m_AlbumDownloader = new AlbumDownloader();
             m_commonInterestsFinder = new CommonInterestsFinder();
-            SorterStrategy = new Sorter<Page>(new AscendingPageSorter());
+            m_SorterPages = new Sorter<Page>(new AscendingPageSorter());
         }
 
         private void initData()
@@ -217,8 +217,8 @@ namespace BasicFacebookFeatures
             if(m_LoggedInUser!=null)
             {
                 List<Page> items = m_LoggedInUser.LikedPages.Cast<Page>().ToList();
-                SorterStrategy.Comparer = new AscendingPageSorter();
-                SorterStrategy.Sort(items);
+                m_SorterPages.Comparer = new AscendingPageSorter();
+                m_SorterPages.Sort(items);
                 pageBindingSource.DataSource = items;
             }
             else
@@ -232,8 +232,8 @@ namespace BasicFacebookFeatures
             if (m_LoggedInUser != null)
             {
                 List<Page> items = m_LoggedInUser.LikedPages.Cast<Page>().ToList();
-                SorterStrategy.Comparer = new DescendingPageSorter();
-                SorterStrategy.Sort(items);
+                m_SorterPages.Comparer = new DescendingPageSorter();
+                m_SorterPages.Sort(items);
                 pageBindingSource.DataSource = items;
             }
             else
