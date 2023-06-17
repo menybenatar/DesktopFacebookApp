@@ -1,9 +1,4 @@
 ﻿using FacebookWrapper.ObjectModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures
 {
@@ -14,5 +9,4 @@ namespace BasicFacebookFeatures
             return string.Compare(i_Page2.Name, i_Page1.Name);
         }
     }
-    
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
-using System.Collections;
 
 namespace BasicFacebookFeatures
 {
@@ -18,7 +18,7 @@ namespace BasicFacebookFeatures
 
         private CommonInterestsFinder m_commonInterestsFinder { get; set; } = null;
 
-        private Sorter<Page> m_SorterPages { get; set;}
+        private Sorter<Page> m_SorterPages { get; set; }
 
         private ControlNotifier m_ControlNotifier = new ControlNotifier();
 
@@ -133,10 +133,10 @@ namespace BasicFacebookFeatures
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             const bool v_IsLoggedIn = false;
-			FacebookService.LogoutWithUI();
+            FacebookService.LogoutWithUI();
             m_ControlNotifier.NotifyControlObservers(v_IsLoggedIn);
             buttonLogin.Visible = true;
-			buttonLogout.Visible = false;
+            buttonLogout.Visible = false;
 		}
 
         private void pictureBoxMainLogo_Click(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace BasicFacebookFeatures
 
         private void buttonAsc_Click(object sender,  EventArgs e)
         {
-            if(m_LoggedInUser!=null)
+            if(m_LoggedInUser != null)
             {
                 List<Page> items = m_LoggedInUser.LikedPages.Cast<Page>().ToList();
                 m_SorterPages.Comparer = new AscendingPageSorter();

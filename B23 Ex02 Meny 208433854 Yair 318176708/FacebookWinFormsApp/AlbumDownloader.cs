@@ -8,6 +8,7 @@ namespace BasicFacebookFeatures
     public class AlbumDownloader : IEnumerable
     {
         private readonly FacebookObjectCollection<Album> r_Albums;
+
         public List<Album> AlbumsToSave { get; set; }
 
         public AlbumDownloader()
