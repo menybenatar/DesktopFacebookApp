@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures
 {
-    public interface ISorterStrategy
+    public class DescendingPageSorter : IComparer<Page>
     {
-        void Sort(List<Page> i_PagesToSort);
+        public int Compare(Page i_Page1, Page i_Page2)
+        {
+            return string.Compare(i_Page2.Name, i_Page1.Name);
+        }
     }
+    
 }
