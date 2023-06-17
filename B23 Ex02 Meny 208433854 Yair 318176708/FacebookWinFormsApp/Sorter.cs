@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace BasicFacebookFeatures
 {
-    public class SorterStrategy<T> where T : class
+    public class Sorter<T> where T : class
     {
 
         public IComparer<T> Comparer { get; set; }
 
-        public SorterStrategy(IComparer<T> i_Comparer)
+        public Sorter(IComparer<T> i_Comparer)
         {
             Comparer = i_Comparer;
         }

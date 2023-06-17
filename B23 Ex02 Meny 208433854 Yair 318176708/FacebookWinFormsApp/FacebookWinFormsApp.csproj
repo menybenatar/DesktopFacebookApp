@@ -107,7 +107,7 @@
     <Compile Include="IComparer.cs" />
     <Compile Include="IControlObserver.cs" />
     <Compile Include="IPhoto.cs" />
-    <Compile Include="SorterStrategy.cs" />
+    <Compile Include="Sorter.cs" />
     <Compile Include="LabelObserver.cs">
       <SubType>Component</SubType>
     </Compile>
